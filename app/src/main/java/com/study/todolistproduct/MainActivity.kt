@@ -20,10 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TodolistProductTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    MainView(Modifier.padding(innerPadding))
                 }
             }
         }
@@ -31,17 +28,15 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun MainView(modifier: Modifier = Modifier){
+    Text("Hello TODO")
+
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun MainViewPreview(){
     TodolistProductTheme {
-        Greeting("Android")
+        MainView()
     }
 }
